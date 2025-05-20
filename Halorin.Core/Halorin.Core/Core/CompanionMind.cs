@@ -37,5 +37,19 @@ namespace Halorin.Core.Core
 
             return currentThought;
         }
+        private readonly HalorinContext context;
+        private readonly List<ICognitiveLayer> cognitiveLayers = new();
+
+        public CompanionMind(HalorinContext context, string logLevel = "prod")
+        {
+            this.context = context;
+            context.SetLogLevel(logLevel);
+            InitializeLayers();
+        }
+
+        private void InitializeLayers()
+        {
+            // Add your layers here (Neryth, Selvarien, etc.)
+        }
     }
 }
